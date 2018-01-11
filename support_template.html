@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.createElement('template')
+    function supportTemplate() {
+        return 'content' in document.createElement('template')
+    }
+    if(supportTemplate()) {
+        console.log('支持template')
+    } else {
+        console.log('不支持template')
+    }
+</script>
+</body>
+</html>

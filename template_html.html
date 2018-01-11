@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<template id="templateDemo">
+    <div id="name"></div>
+    <div id="country"></div>
+</template>
+
+<script>
+    var templateDemo = document.querySelector('#templateDemo')
+    templateDemo.content.querySelector('#name').textContent = 'cag'
+    templateDemo.content.querySelector('#country').textContent = 'china'
+    document.body.appendChild(templateDemo.content)
+</script>
+</body>
+</html>
