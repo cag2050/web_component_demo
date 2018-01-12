@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<div id="nameTag">我是张三</div>
 
+<template id="nameTagTemplate">
+    <style>
+        .outer {
+            border: 2px solid gray
+        }
+    </style>
+    <div class="outer">
+        Hi, my name is bob!
+    </div>
+</template>
+
+<script>
+    var shadow = document.querySelector('nameTag').createShadowRoot()
+    var template = document.querySelector('nameTagTemplate')
+</script>
 </body>
 </html>
