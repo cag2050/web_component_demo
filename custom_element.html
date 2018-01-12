@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    if ('registerElement' in document) {
+        console.log('支持自定义元素')
+        var buttonProtoype = Object.create(HTMLElement.prototype)
+//        buttonProtoype.print = function () {
+//            console.log('原型打印信息：这是一个自定义button')
+//        }
+        var SuperButton = document.registerElement('super-button', {
+            prototype: buttonProtoype,
+            extends: 'button'
+        })
+        document.body.appendChild(new SuperButton())
+        var supperButton = document.querySelector('super-button')
+//        supperButton.print()
+    } else {
+        console.log('不支持自定义元素')
+    }
+</script>
+</body>
+</html>

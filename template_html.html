@@ -6,6 +6,14 @@
 </head>
 <body>
 <template id="templateDemo">
+    <style>
+        :host div {
+            background: #f8f8f8;
+        }
+        :host(:hover) {
+            background: #ccc;
+        }
+    </style>
     <div id="name"></div>
     <div id="country"></div>
 </template>
@@ -14,7 +22,12 @@
     var templateDemo = document.querySelector('#templateDemo')
     templateDemo.content.querySelector('#name').textContent = 'cag'
     templateDemo.content.querySelector('#country').textContent = 'china'
-    document.body.appendChild(templateDemo.content)
+    // 第1种方法：直接插入content
+//    document.body.appendChild(templateDemo.content)
+    // 第2种方法：importNode
+    var clone = document.importNode(templateDemo.content, true)
+    document.body.appendChild(clone)
+
 </script>
 </body>
 </html>
